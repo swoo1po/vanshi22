@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Anniversary My Love ❤</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Happy Anniversary 💞</h1>
+  <div id="message"></div>
+
+  <script>
+    const msg = `To the love of my life,
+
+Every second spent with you is a chapter in my favorite love story.
+
+You're my best friend, my forever person, my soulmate. Thank you for loving me, growing with me, and just being you.
+
+Here’s to every heartbeat we’ve shared, and the millions still to come.
+
+Forever yours 💖`;
+
+    let i = 0;
+    const speed = 50;
+
+    function typeWriter() {
+      if (i < msg.length) {
+        document.getElementById("message").innerHTML += msg.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+
+    // Generate floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 300);
+  </script>
+
+</body>
+</html>
